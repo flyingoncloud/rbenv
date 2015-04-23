@@ -49,9 +49,9 @@ fi
 
 if [ -z "${RBENV_ROOT}" ]; then
    if [ -z "$HOME" ]; then
-     RBENV_ROOT="${HOME}/.rbenv"
-   else
      RBENV_ROOT="/root/.rbenv"
+   else
+     RBENV_ROOT="${HOME}/.rbenv"
    fi
 else
   RBENV_ROOT="${RBENV_ROOT%/}"
