@@ -70,11 +70,13 @@ export RBENV_DIR
 shopt -s nullglob
 
 bin_path="$(abs_dirname "$0")"
+echo "**** bin_path: ${bin_path}"
 for plugin_bin in "${RBENV_ROOT}/plugins/"*/bin; do
   PATH="${plugin_bin}:${PATH}"
 done
 export PATH="${bin_path}:${PATH}"
 
+echo "**** PATH: ${PATH}"
 RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${RBENV_ROOT}/rbenv.d"
 if [ "${bin_path%/*}" != "$RBENV_ROOT" ]; then
   # Add rbenv's own `rbenv.d` unless rbenv was cloned to RBENV_ROOT
